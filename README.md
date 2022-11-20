@@ -1,2 +1,3 @@
-# mysite
-My site  - www.yakymov.site
+# My personal website
+
+- www.yakymov.site
