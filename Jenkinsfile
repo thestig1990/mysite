@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t thestig/mysite-apache:build-${env.BUILD_ID} .'
+        sh "docker build -t thestig/mysite-apache:build-$BUILD_ID ."
       }
     }
   }
