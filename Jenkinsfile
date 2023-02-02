@@ -9,12 +9,17 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh "docker build -t thestig/mysite-apache:build-$BUILD_ID ."
+        sh "docker build -t thestig90/mysite-apache:build-$BUILD_ID ."
       }
     }
     stage('Login') {
       steps {
         sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+      }
+    }
+    stage('Push') {
+      steps {
+        sh "docker push thestig90/mysite-apache:build-$BUILD_ID"
       }
     }
   }
