@@ -7,6 +7,8 @@ pipeline {
   }
   environment {
     DOCKERHUB_CREDENTIALS = credentials('thestig90-dockerhub')
+  }
+  parameters {
     string(name: 'username', defaultValue: 'ec2-user', description: 'user name for the remote awc ec2 instance')
     string(name: 'hostname', defaultValue: '18.194.44.156', description: 'host name for the remote awc ec2 instance')
   }
