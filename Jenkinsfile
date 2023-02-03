@@ -1,5 +1,7 @@
 pipeline {
-  agent 'any'
+  agent {
+    label 'aws'
+  }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
@@ -21,6 +23,11 @@ pipeline {
       steps {
         sh "docker push thestig90/mysite-apache:build-$BUILD_ID"
       }
+    }
+  }
+  post {
+    always {
+      sh 'docker logout'
     }
   }
 }
