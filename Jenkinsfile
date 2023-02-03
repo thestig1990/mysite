@@ -7,8 +7,8 @@ pipeline {
   }
   environment {
     DOCKERHUB_CREDENTIALS = credentials('thestig90-dockerhub')
-    REMOTE_HOST='ec2-user'
-    REMOTE_HOST='18.194.44.156'
+    string(name: 'username', defaultValue: 'ec2-user', description: 'user name for the remote awc ec2 instance')
+    string(name: 'hostname', defaultValue: '18.194.44.156', description: 'host name for the remote awc ec2 instance')
   }
   stages {
     stage('Login') {
@@ -23,9 +23,9 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh "scp ${REMOTE_USER}@${REMOTE_HOST}:/home/ec2-user"
-        sh "ssh ${REMOTE_USER}@${REMOTE_HOST} 'chmod +x deploy.sh'"
-        sh "ssh ${REMOTE_USER}@${REMOTE_HOST} ./deploy.ssh"
+        sh 'scp deploy.sh ${params.username}@${params.hostname}:/home/ec2-user'
+        sh 'ssh ${params.username}@${params.hostname} "chmod +x deploy.sh"'
+        sh 'ssh ${params.username}@${params.hostname} ./deploy.ssh'
       }
     }
   }
