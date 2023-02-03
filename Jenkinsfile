@@ -25,9 +25,9 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'scp deploy.sh ${params.username}@${params.hostname}:/home/ec2-user'
-        sh 'ssh ${params.username}@${params.hostname} "chmod +x deploy.sh"'
-        sh 'ssh ${params.username}@${params.hostname} ./deploy.ssh'
+        sh 'scp deploy.sh ${username}@${hostname}:/home/ec2-user'
+        sh 'ssh ${username}@${hostname} "chmod +x deploy.sh"'
+        sh 'ssh ${username}@${hostname} /home/ec2-user/deploy.sh'
       }
     }
   }
