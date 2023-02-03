@@ -8,4 +8,4 @@ echo "-----------Stop docker container-----------"
 docker ps -q --filter ancestor=$DOCKER_IMAGE | xargs -r docker stop
 
 echo "-----------Run container with port mapping-----------"
-docker run -dit -p 8081:8080 $DOCKER_IMAGE
+docker run -dit -p 8081:80 $DOCKER_IMAGE
