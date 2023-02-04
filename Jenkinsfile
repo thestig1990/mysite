@@ -12,6 +12,7 @@ pipeline {
     stage('Build') {
       steps {
         sh "docker build -t thestig90/mysite-apache:build-$BUILD_ID ."
+        sh "docker tag thestig90/mysite-apache:build-$BUILD_ID thestig90/mysite-apache:latest"
       }
     }
     stage('Login') {
@@ -22,6 +23,7 @@ pipeline {
     stage('Push') {
       steps {
         sh "docker push thestig90/mysite-apache:build-$BUILD_ID"
+        sh "docker push thestig90/mysite-apache:latest"
       }
     }
   }
