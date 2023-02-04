@@ -1,5 +1,5 @@
 echo "-----------Starting to deploy docker image-----------"
-DOCKER_IMAGE="thestig90/mysite-apache:build-9"
+DOCKER_IMAGE="thestig90/mysite-apache:latest"
 
 echo "-----------Pull docker image-----------"
 docker pull $DOCKER_IMAGE
