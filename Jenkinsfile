@@ -21,11 +21,11 @@ pipeline {
         sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
       }
     }
-    stage('Pull') {
+    /*stage('Pull') {
       steps {
         sh "docker pull thestig90/mysite-apache:latest"
       }
-    }
+    } */
     stage('Deploy') {
       steps {
         sh 'scp deploy.sh ${username}@${hostname}:/home/ec2-user'
