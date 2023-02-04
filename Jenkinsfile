@@ -20,7 +20,7 @@ pipeline {
     }
     stage('Pull') {
       steps {
-        sh "docker pull thestig90/mysite-apache:build-9"
+        sh "docker pull thestig90/mysite-apache:latest"
       }
     }
     stage('Deploy') {
