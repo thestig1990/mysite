@@ -3,7 +3,7 @@ pipeline {
     label 'controller'
   }
   triggers {
-    upstream 'DockerHub-push_image,'
+    upstream "DockerHub-push_image"
   }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
