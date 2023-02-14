@@ -1,4 +1,3 @@
-## My personal website
+## Final project for the EPAM DevOps Essentials L1 course with using Docker and Jenkins.
 
-> - www.yakymov.site
-> - [yakymov.site](http://yakymov.site/)
+### Build and push docker image(webserver+index.html) to the DockerHub with using Dockerfile and Jenkinsefile.
