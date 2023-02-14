@@ -1,4 +1,3 @@
-## My personal website
+## Final project for the EPAM DevOps Essentials L1 course with using Docker and Jenkins.
 
-> - www.yakymov.site
-> - [yakymov.site](http://yakymov.site/)
+### Pull docker image(Apache HTTP-сервер + index.html) from the DockerHub registry and deploy to the AWS EC2 Instance.
